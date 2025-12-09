@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Dreams - Туристическое агентство</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+</head>
+<body>
+    <!-- Прелоадер -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="plane-container">
+                <i class="fas fa-plane plane-icon"></i>
+                <div class="plane-path">
+                    <div class="plane-line"></div>
+                </div>
+            </div>
+            <h2 class="preloader-text">Travel Dreams</h2>
+            <p class="preloader-subtext">Загружаем лучшие предложения...</p>
+        </div>
+    </div>
+
+    <!-- Кнопка возврата наверх -->
+    <button id="backToTop" class="back-to-top" aria-label="Вернуться наверх">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Хедер с фиксированным меню -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-umbrella-beach"></i>
+                </div>
+                TRAVEL DREAMS
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Главная</a></li>
+                    <li><a href="#tours" class="nav-link">Туры</a></li>
+                    <li><a href="#about" class="nav-link">О нас</a></li>
+                    <li><a href="#reviews" class="nav-link">Отзывы</a></li>
+                    <li><a href="#contact" class="nav-link">Контакты</a></li>
+                    <li><a href="#contact" class="btn btn-booking">Бронировать</a></li>
+                </ul>
+                <button class="menu-toggle" aria-label="Открыть меню">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero-блок -->
+    <section class="hero" id="home">
+        <div class="hero-overlay">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Открой мир с нами</h1>
+                    <p class="hero-subtitle">Мы превращаем ваши мечты о путешествиях в незабываемые впечатления. Откройте для себя новые горизонты с профессиональной поддержкой.</p>
+                    <div class="hero-buttons">
+                        <a href="#tours" class="btn btn-primary">Выбрать тур</a>
+                        <a href="#contact" class="btn btn-secondary">Консультация</a>
+                    </div>
+                </div>
+                <div class="hero-animation">
+                    <div class="world-map">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="flying-plane">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="travel-icons">
+                        <i class="fas fa-passport"></i>
+                        <i class="fas fa-suitcase-rolling"></i>
+                        <i class="fas fa-camera"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Популярные туры -->
+    <section class="section tours-section" id="tours">
+        <div class="container">
+            <h2 class="section-title">Популярные туры</h2>
+            <p class="section-subtitle">Лучшие направления этого сезона по выгодным ценам</p>
+            
+            <div class="sort-controls">
+                <button id="sortDefault" class="sort-btn active">По умолчанию</button>
+                <button id="sortPrice" class="sort-btn">По цене</button>
+                <button id="sortDuration" class="sort-btn">По длительности</button>
+            </div>
+            
+            <div class="tours-grid" id="toursContainer">
+                <!-- Карточки туров будут вставлены через JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Что включено -->
+    <section class="section included-section" id="about">
+        <div class="container">
+            <h2 class="section-title">Что включено в тур</h2>
+            <p class="section-subtitle">Мы заботимся о каждом аспекте вашего путешествия</p>
+            
+            <div class="included-grid">
+                <div class="included-item">
+                    <div class="included-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Перелёт</h3>
+                    <p>Авиабилеты туда и обратно эконом-классом</p>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3>Проживание</h3>
+                    <p>Отели 4-5 звёзд с завтраками</p>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Трансфер</h3>
+                    <p>Встреча в аэропорту и все необходимые переезды</p>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Гид</h3>
+                    <p>Профессиональный русскоговорящий гид</p>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Экскурсии</h3>
+                    <p>Все экскурсии по программе, входные билеты включены</p>
+                </div>
+                <div class="included-item">
+                    <div class="included-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Страховка</h3>
+                    <p>Медицинская страховка на весь период путешествия</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section class="section reviews-section" id="reviews">
+        <div class="container">
+            <h2 class="section-title">Отзывы клиентов</h2>
+            <p class="section-subtitle">Что говорят наши путешественники</p>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">А</div>
+                        <div class="review-info">
+                            <h3>Анна Петрова</h3>
+                            <p>Москва</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Путешествие в Италию превзошло все ожидания! Всё было идеально организовано: от трансфера до экскурсий. Спасибо команде Travel Dreams!"</p>
+                    <div class="review-tour">Тур: "Волшебная Италия"</div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">Д</div>
+                        <div class="review-info">
+                            <h3>Дмитрий Соколов</h3>
+                            <p>Санкт-Петербург</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="review-text">"Отличный тур по Греции! Особенно впечатлили острова. Гид был очень knowledgeable. Немного задержался трансфер, но в целом всё отлично."</p>
+                    <div class="review-tour">Тур: "Греческие острова"</div>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">Е</div>
+                        <div class="review-info">
+                            <h3>Екатерина Иванова</h3>
+                            <p>Екатеринбург</p>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="review-text">"Впервые воспользовалась услугами турагентства и не пожалела! Подобрали идеальный тур на Мальдивы для нашего медового месяца. Всё было волшебно!"</p>
+                    <div class="review-tour">Тур: "Райские Мальдивы"</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма заявки -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Оставить заявку</h2>
+            <p class="section-subtitle">Заполните форму, и мы подберем для вас идеальное путешествие</p>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Ваш email">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <select id="destination" name="destination" required>
+                            <option value="" disabled selected>Выберите направление</option>
+                            <option value="italy">Италия</option>
+                            <option value="greece">Греция</option>
+                            <option value="spain">Испания</option>
+                            <option value="france">Франция</option>
+                            <option value="maldives">Мальдивы</option>
+                            <option value="japan">Япония</option>
+                            <option value="bali">Бали</option>
+                            <option value="thailand">Тайланд</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <textarea id="comment" name="comment" rows="4" placeholder="Ваши пожелания и комментарии"></textarea>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary submit-btn">Отправить заявку</button>
+                <div id="formMessage" class="form-message"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <a href="#home" class="logo footer-logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-umbrella-beach"></i>
+                        </div>
+                        TRAVEL DREAMS
+                    </a>
+                    <p class="footer-text">Мы создаем незабываемые путешествия с 2010 года. Более 5000 довольных клиентов по всему миру.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://telegram.org" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="https://vk.com" target="_blank" aria-label="VKontakte"><i class="fab fa-vk"></i></a>
+                        <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Путешественников, 15</p>
+                    <p><i class="fas fa-phone"></i> +7 (495) 123-45-67</p>
+                    <p><i class="fas fa-envelope"></i> info@traveldreams.ru</p>
+                    <p><i class="fas fa-clock"></i> Пн-Пт: 9:00-20:00, Сб-Вс: 10:00-18:00</p>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Новостная рассылка</h3>
+                    <p>Подпишитесь на рассылку и получайте первыми горящие предложения</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Ваш email" required>
+                        <button type="submit" class="btn btn-small">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Travel Dreams. Все права защищены.</p>
+                <p><a href="#" class="footer-link">Политика конфиденциальности</a> | <a href="#" class="footer-link">Условия использования</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно тура -->
+    <div id="tourModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Закрыть">&times;</button>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalImage" src="" alt="" class="modal-image">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <div class="modal-location" id="modalLocation"></div>
+                    <div class="modal-details">
+                        <div class="modal-duration" id="modalDuration"></div>
+                        <div class="modal-price" id="modalPrice"></div>
+                    </div>
+                    <div class="modal-description" id="modalDescription"></div>
+                    <div class="modal-included">
+                        <h3>Что включено:</h3>
+                        <ul id="modalIncluded"></ul>
+                    </div>
+                    <div class="modal-program">
+                        <h3>Программа тура:</h3>
+                        <div id="modalProgram"></div>
+                    </div>
+                    <button class="btn btn-primary btn-booking" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Забронировать этот тур</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
